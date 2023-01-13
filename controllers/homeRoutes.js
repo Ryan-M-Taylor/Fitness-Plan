@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      workouts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      workouts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -59,7 +59,21 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+    // filter workout data to check if there is data for particular day, then plug into object array
+    // const filter = function output
+    //     const someData =[ {
+    //       day: "Monday",
+    //       data: filter,
+    //       workoutL 
+    //     },
+    //     {
+    //       day: "Tuesday",
+    //       data: "data"
+    //     }
+    //     ]
 
+    
+    console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true
