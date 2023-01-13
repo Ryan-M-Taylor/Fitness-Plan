@@ -1,23 +1,17 @@
 <!-- Loop over each object in the workouts array -->
-{{#each workouts as |workout| }}
+{{#each user as |users| }}
 <div class="row mb-4 workout">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/workout/{{workout.id}}">{{workout.name}}</a>
+      {{!-- {{{get_emoji}}} --}}
+      <a href="/workout/{{user.id}}">{{user.name}}</a>
     </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount workout.needed_funding}}</span>
-      needed!
-    </p>
     <p>Created by {{workout.user.name}} on {{format_date workout.date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
-      {{workout.description}}
+      {{workout.workout}}
     </p>
   </div>
 </div>

@@ -8,7 +8,54 @@
   <div class="col-md-6">
     <h3>Create a New workout:</h3>
 
-    <form class="form new-workout-form">
+    {{#each workouts as |workout|}}
+    <div class="d-flex flex-row" id="container">
+      <div class="input-group">
+        <h3 class="weekday">{{workout.weekday}}</h3>
+        <span class="input-group-text"> Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> {{workout.workout}} </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> {{workout_time}} </textarea>
+      </div>
+      {{/each}}
+      <div class="input-group">
+        <h3 class="weekday">Tuesday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+      <div class="input-group">
+        <h3 class="weekday">Wednesday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+      <div class="input-group">
+        <h3 class="weekday">Thursday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+      <div class="input-group">
+        <h3 class="weekday">Friday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+      <div class="input-group">
+        <h3 class="weekday">Saturday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+      <div class="input-group">
+        <h3 class="weekday">Sunday</h3>
+        <span class="input-group-text">Workout and Total Time Spent:</span>
+        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
+        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+      </div>
+    </div>
+
+    {{!-- <form class="form new-workout-form">
       <div class="form-group">
         <label for="workout-name">workout name:</label>
         <input class="form-input" type="text" id="workout-name" name="workout-name" />
@@ -25,9 +72,9 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> --}}
 
-  {{#if workouts.length}}
+  {{!-- {{#if workouts.length}}
   <div class="col-md-6 workout-list">
     <h3>Current workouts:</h3>
 
@@ -43,35 +90,13 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div> --}}
 
 <script src="./js/profile.js"></script>
 
 {{!-- <div> --}}
   {{!-- <canvas id="myChart"></canvas> --}}
-{{!-- </div> --}}
+  {{!-- </div> --}}
 
-{{!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
-
-{{!-- <script> --}}
-  {{!-- const ctx = document.getElementById('myChart'); --}}
-
-  {{!-- new Chart(ctx, { --}}
-    {{!-- type: 'bar', --}}
-    {{!-- data: { --}}
-      {{!-- labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], --}}
-      {{!-- datasets: [{ --}}
-        {{!-- label: '# of Votes', --}}
-        {{!-- data: [12, 19, 3, 5, 2, 3], --}}
-        {{!-- borderWidth: 1 --}}
-      {{!-- }] --}}
-    {{!-- }, --}}
-    {{!-- options: { --}}
-      {{!-- scales: { --}}
-        {{!-- y: { --}}
-          {{!-- beginAtZero: true --}}
-        {{!-- } --}}
-      {{!-- } --}}
-    {{!-- } --}}
-  {{!-- }); --}}
-{{!-- </script> --}}
+{{!--
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
