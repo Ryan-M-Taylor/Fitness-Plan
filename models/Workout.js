@@ -104,9 +104,8 @@ module.exports = Workout;
  * ]
  */
 
-const weekdays = ['Monday', 'Tuesday', 'Wednesday']
+// const weekdays = ['Monday', 'Tuesday', 'Wednesday']
 
-weekdays.forEach(() => {
+// weekdays.forEach(() => {
 
 
-})

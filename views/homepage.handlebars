@@ -6,6 +6,7 @@
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{!-- {{{get_emoji}}} --}}
       <a href="/workout/{{user.id}}">{{user.name}}</a>
+      <p> Total Workout Time: {{ user.total_time }}</p>
     </h2>
     {{!-- <p>Created by {{workout.user.name}} on {{format_date workout.date_created}}</p> --}}
   </div>
