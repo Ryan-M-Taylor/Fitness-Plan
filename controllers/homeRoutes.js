@@ -2,24 +2,58 @@ const router = require('express').Router();
 const { Workout, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all Workouts and JOIN with user data
+//     const workoutData = await Workout.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     // Serialize data so the template can read it
+//     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
+//     // Pass serialized data and session flag into template
+//     res.render('homepage', {
+//       workouts,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.get('/', async (req, res) => {
   try {
     // Get all Workouts and JOIN with user data
-    const workoutData = await Workout.findAll({
+    const userData = await User.findAll({
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Workout,
+          attributes: ['workout_time'],
         },
       ],
     });
-
     // Serialize data so the template can read it
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-
+    const users = userData.map((user) => user.get({ plain: true }));
+    
+    for (let i = 0; i < users.length; i++){
+      let totalWorkoutTime = 0;
+      const workouts = users[i].workouts.map((workout) => workout.workout_time)
+      // console.log(workouts)
+      totalWorkoutTime = workouts.reduce((a, b) => parseInt(a) + parseInt(b), 0)
+      console.log(totalWorkoutTime)
+      users[i].total_time = totalWorkoutTime;
+    }
+    
+    // console.log(users[0].workouts[0].workout_time)
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      workouts,
+      users,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -72,7 +106,7 @@ router.get('/profile', withAuth, async (req, res) => {
     //     }
     //     ]
 
-    
+
     console.log(user);
     res.render('profile', {
       ...user,
