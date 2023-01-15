@@ -1,19 +1,27 @@
 <!-- Loop over each object in the workouts array -->
-{{#each users as |user| }}
-<div class="row mb-4 workout">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
-      <a href="/workout/{{user.id}}">{{user.name}}</a>
-      <p> Total Workout Time: {{ user.total_time }}</p>
-    </h2>
-    {{!-- <p>Created by {{workout.user.name}} on {{format_date workout.date_created}}</p> --}}
+
+
+
+{{#each users as |user|}}
+  <div class='row mb-4 workout main-container'>
+    <div class='col-md-5'>
+      <h2 class = "user-name">
+        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+        {{!-- {{{get_emoji}}} --}}
+        <a href='/workout/{{user.id}}'>{{user.name}}</a>
+      </h2>
+      {{!-- <p>Created by {{workout.user.name}} on {{format_date workout.date_created}}</p> --}}
+    </div>
+
+    
+
+    <div>
+      <p class = "total-workout-time"> Total Workout Time: {{user.total_time}}</p>
+    </div>
+    <div class='col-md-7'>
+      <p>
+        {{!-- {{workout.workout}} --}}
+      </p>
+    </div>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{!-- {{workout.workout}} --}}
-    </p>
-  </div>
-</div>
 {{/each}}

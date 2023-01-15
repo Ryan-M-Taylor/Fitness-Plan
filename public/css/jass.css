@@ -420,12 +420,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
   text-decoration: none;
+  transition: ease-in 200ms;
 }
 
 a:hover {
-  color: #065b83;
+  /* color: #ffe605; */
   text-decoration: underline;
 }
 
@@ -986,6 +986,7 @@ a:hover {
 
 .btn:hover {
   background-color: #cecece;
+  cursor: pointer;
 }
 
 .btn.btn-squared {
