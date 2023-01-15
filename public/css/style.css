@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nosifer&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Rubik+Wet+Paint&display=swap');
+
+
+
+*{
+  color: white;
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+textarea {
+  color: black;
 }
 
 .no-button {
@@ -21,4 +35,89 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+.main-container{
+  display:flex;
+  border:solid 2px black;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: ease-in 400ms;
+  
+}
+
+.main-container:hover{
+  background-color: black;
+  opacity: 0.9;
+  box-shadow: 5px 2px 5px white;
+
+}
+
+body{
+  
+  background-image: url('./images/arnold.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 16px;
+
+}
+
+/* .bg-image{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFs5EXRGiN0156q6bjFwe5mOrzVdjuz1uTMQ&usqp=CAU');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFs5EXRGiN0156q6bjFwe5mOrzVdjuz1uTMQ&usqp=CAU');
+  background-size: cover;
+  background-repeat: no-repeat;
+ height: 100vh;
+  font-family: 'Nosifer', cursive;
+  opacity: 0.3;
+
+} */
+
+.hide{
+  display:none;
+  background-color: rgba(0, 0, 0, 0.6)
+  
+}
+
+.signup-btn{
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: none;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+
+.signin-form{
+  border: solid rgb(0, 0, 0);
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: solid 2px white;
+}
+
+.shown {
+  border: solid 2px white;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.8)
+
+}
+
+.total-workout-time{
+  font-family: 'Nosifer', cursive;
+
+}
+
+.user-name{
+  
+}
+
+
+.container1{
+  display:flex;
+}
+
+.card {
+  background-color: rgb(121, 110, 110);
 }
