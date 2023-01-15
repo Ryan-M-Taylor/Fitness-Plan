@@ -12,6 +12,10 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+textarea {
+  color: black;
+}
+
 .no-button {
   background: none;
   border: none;
@@ -109,4 +113,10 @@ body{
   
 }
 
+.container1{
+  display:flex;
+}
 
+.card {
+  background-color: rgb(121, 110, 110);
+}

@@ -1,61 +1,127 @@
 <div class="row">
-  <div class="col-auto">
+  <div class="-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New workout:</h3>
+{{! <div class="row mt-4">
+  <div class="-md-6"> }}
+<h3>Create a New workout:</h3>
 
-    {{#each workouts as |workout|}}
-    <div class="d-flex flex-row" id="container">
-      <div class="input-group">
-        <h3 class="weekday">{{workout.weekday}}</h3>
-        <span class="input-group-text"> Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> {{workout.workout}} </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> {{workout_time}} </textarea>
-      </div>
-      {{/each}}
-      <div class="input-group">
-        <h3 class="weekday">Tuesday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
-      <div class="input-group">
-        <h3 class="weekday">Wednesday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
-      <div class="input-group">
-        <h3 class="weekday">Thursday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
-      <div class="input-group">
-        <h3 class="weekday">Friday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
-      <div class="input-group">
-        <h3 class="weekday">Saturday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
-      <div class="input-group">
-        <h3 class="weekday">Sunday</h3>
-        <span class="input-group-text">Workout and Total Time Spent:</span>
-        <textarea type="text" aria-label="Workout" class="form-control"> </textarea>
-        <textarea type="text" aria-label="Time" class="form-control"> </textarea>
-      </div>
+{{!-- {{#each workouts as |workout|}} --}}
+<div class="container1">
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Monday</h3>
+      <span class="input-group-text"> Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > {{workout.workout}} </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control">
+        {{workout_time}}
+      </textarea>
     </div>
+  </div>
+  {{!-- {{/each}} --}}
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Tuesday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Wednesday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Thursday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Friday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Saturday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
+  <div class="card">
+    <div class="input-group">
+      <h3 class="weekday">Sunday</h3>
+      <span class="input-group-text">Workout:</span>
+      <textarea
+        type="text"
+        aria-label="Workout"
+        class="form-control"
+        style="height: 25vh"
+      > </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" aria-label="Time" class="form-control"> </textarea>
+    </div>
+  </div>
 
-    {{!-- <form class="form new-workout-form">
+</div>
+
+{{! <form class="form new-workout-form">
       <div class="form-group">
         <label for="workout-name">workout name:</label>
         <input class="form-input" type="text" id="workout-name" name="workout-name" />
@@ -72,18 +138,18 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div> --}}
+  </div> }}
 
-  {{!-- {{#if workouts.length}}
-  <div class="col-md-6 workout-list">
+{{!-- {{#if workouts.length}}
+  <div class="-md-6 workout-list">
     <h3>Current workouts:</h3>
 
     {{#each workouts as |workout|}}
     <div class="row mb-2">
-      <div class="col-md-8">
+      <div class="-md-8">
         <h4><a href="/workout/{{workout.id}}">{{workout.name}}</a></h4>
       </div>
-      <div class="col-md-4">
+      <div class="-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{workout.id}}">DELETE</button>
       </div>
     </div>
@@ -94,9 +160,9 @@
 
 <script src="./js/profile.js"></script>
 
-{{!-- <div> --}}
-  {{!-- <canvas id="myChart"></canvas> --}}
-  {{!-- </div> --}}
+{{! <div> }}
+{{! <canvas id="myChart"></canvas> }}
+{{! </div> }}
 
-{{!--
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+{{!
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> }}
