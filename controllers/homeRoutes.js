@@ -1,6 +1,7 @@
-const router = require('express').Router();
-const { Workout, User } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { where } = require("sequelize");
+const { Workout, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 // router.get('/', async (req, res) => {
 //   try {
@@ -27,56 +28,60 @@ const withAuth = require('../utils/auth');
 //   }
 // });
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Get all Workouts and JOIN with user data
     const userData = await User.findAll({
       include: [
         {
           model: Workout,
-          attributes: ['workout_time'],
+          attributes: ["workout_time"],
         },
       ],
     });
     // Serialize data so the template can read it
     const users = userData.map((user) => user.get({ plain: true }));
-    
-    for (let i = 0; i < users.length; i++){
+
+    for (let i = 0; i < users.length; i++) {
       let totalWorkoutTime = 0;
-      const workouts = users[i].workouts.map((workout) => workout.workout_time)
+      const workouts = users[i].workouts.map((workout) => workout.workout_time);
       // console.log(workouts)
-      totalWorkoutTime = workouts.reduce((a, b) => parseInt(a) + parseInt(b), 0)
-      console.log(totalWorkoutTime)
+      totalWorkoutTime = workouts.reduce(
+        (a, b) => parseInt(a) + parseInt(b),
+        0
+      );
+      console.log(totalWorkoutTime);
       users[i].total_time = totalWorkoutTime;
     }
-    
+
     // console.log(users[0].workouts[0].workout_time)
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render("homepage", {
       users,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/workout/:id', async (req, res) => {
+//presents user with workouts that match the users id
+router.get("/workout/:id", async (req, res) => {
   try {
     const workoutData = await Workout.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ["name"],
         },
       ],
     });
-
+    
     const workout = workoutData.get({ plain: true });
 
-    res.render('Workout', {
+    res.render("Workout", {
       ...workout,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -84,11 +89,11 @@ router.get('/workout/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
       include: [{ model: Workout }],
     });
 
@@ -98,7 +103,7 @@ router.get('/profile', withAuth, async (req, res) => {
     //     const someData =[ {
     //       day: "Monday",
     //       data: filter,
-    //       workoutL 
+    //       workoutL
     //     },
     //     {
     //       day: "Tuesday",
@@ -106,25 +111,24 @@ router.get('/profile', withAuth, async (req, res) => {
     //     }
     //     ]
 
-
     console.log(user);
-    res.render('profile', {
+    res.render("profile", {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
 module.exports = router;
