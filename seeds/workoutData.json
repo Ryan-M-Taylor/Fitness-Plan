@@ -2,35 +2,43 @@
   {
     "workout": "Swimming: 5x200 Free, 4x200 Breastroke, 500 Free ",
     "workout_time": 90,
+    "weekday": "Monday",
+    "user_id": 1
+  },
+  {
+    "workout": "Chest Day: Massive benchpress weight 500 times",
+    "workout_time": 70,
     "weekday": "Tuesday",
     "user_id": 1
   },
   {
-   "workout": "Chest Day: Massive benchpress weight 500 times",
-    "workout_time": 70,
-    "weekday": "Monday",
-    "user_id": 2
-  },
-
-  {
     "workout": "Leg Day: Massive squat PR 400 lbs",
-     "workout_time": 70,
-     "weekday": "Wednesday",
-     "user_id": 2
-   },
-
-   {
-    "workout": "Bicep curls",
-     "workout_time": 20,
-     "weekday": "Wednesday",
-     "user_id": 2
-   },
-
+    "workout_time": 70,
+    "weekday": "Wednesday",
+    "user_id": 1
+  },
   {
-    
+    "workout": "Bicep curls",
+    "workout_time": 20,
+    "weekday": "Thursday",
+    "user_id": 1
+  },
+  {
     "workout": "Ran 50 miles",
     "workout_time": 120,
-    "weekday": "Thursday",
-    "user_id": 3
-  } 
+    "weekday": "Friday",
+    "user_id": 1
+  },
+  {
+    "workout": "Ran 50 miles",
+    "workout_time": 120,
+    "weekday": "Saturday",
+    "user_id": 1
+  },
+  {
+    "workout": "Ran 50 miles",
+    "workout_time": 120,
+    "weekday": "Sunday",
+    "user_id": 1
+  }
 ]

@@ -15,7 +15,7 @@ const seedDatabase = async () => {
   for (const workout of workoutData) {
     await Workout.create({
       ...workout,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      // user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 

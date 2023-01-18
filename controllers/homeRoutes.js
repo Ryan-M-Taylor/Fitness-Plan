@@ -100,6 +100,22 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     // filter workout data to check if there is data for particular day, then plug into object array
     // const filter = function output
+    // const workoutDays = user.workouts.map((workout) => workout.weekday);
+    // const displayedWorkouts = [];
+    const weekDays = [{ weekday: 'Monday', id: 1 }, { weekday: 'Tuesday', id: 2 },
+    { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
+    { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
+
+    // console.log('workoutDays', workoutDays);
+    // for (let i = 0; i < weekDays.length; i++){
+    //   if (workoutDays.includes(weekDays[i])){
+    //     displayedWorkouts.push(workout)
+    //   }
+    // }
+
+
+    // const d = new Date();
+    // let day = d.getDay();
     //     const someData =[ {
     //       day: "Monday",
     //       data: filter,
@@ -114,7 +130,9 @@ router.get("/profile", withAuth, async (req, res) => {
     console.log(user);
     res.render("profile", {
       ...user,
-      logged_in: true,
+      // workoutDays,
+      weekDays,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
