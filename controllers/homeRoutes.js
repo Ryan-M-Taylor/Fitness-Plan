@@ -40,8 +40,8 @@ router.get('/', async (req, res) => {
     });
     // Serialize data so the template can read it
     const users = userData.map((user) => user.get({ plain: true }));
-    
-    for (let i = 0; i < users.length; i++){
+
+    for (let i = 0; i < users.length; i++) {
       let totalWorkoutTime = 0;
       const workouts = users[i].workouts.map((workout) => workout.workout_time)
       // console.log(workouts)
@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
       console.log(totalWorkoutTime)
       users[i].total_time = totalWorkoutTime;
     }
-    
+
     // console.log(users[0].workouts[0].workout_time)
     // Pass serialized data and session flag into template
     res.render('homepage', {
@@ -95,6 +95,22 @@ router.get('/profile', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     // filter workout data to check if there is data for particular day, then plug into object array
     // const filter = function output
+    // const workoutDays = user.workouts.map((workout) => workout.weekday);
+    // const displayedWorkouts = [];
+    const weekDays = [{ weekday: 'Monday', id: 1 }, { weekday: 'Tuesday', id: 2 },
+    { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
+    { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
+
+    // console.log('workoutDays', workoutDays);
+    // for (let i = 0; i < weekDays.length; i++){
+    //   if (workoutDays.includes(weekDays[i])){
+    //     displayedWorkouts.push(workout)
+    //   }
+    // }
+
+
+    // const d = new Date();
+    // let day = d.getDay();
     //     const someData =[ {
     //       day: "Monday",
     //       data: filter,
@@ -110,6 +126,8 @@ router.get('/profile', withAuth, async (req, res) => {
     console.log(user);
     res.render('profile', {
       ...user,
+      // workoutDays,
+      weekDays,
       logged_in: true
     });
   } catch (err) {
