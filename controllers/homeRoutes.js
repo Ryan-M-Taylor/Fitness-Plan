@@ -83,6 +83,37 @@ router.get('/workout/:id', async (req, res) => {
   }
 });
 
+
+
+
+
+router.get('/users/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: Workout,
+          attributes: ['workout', 'workout_time'],
+        },
+      ],
+    });
+
+    const weekDays = [{ weekday: 'Monday', id: 1 }, { weekday: 'Tuesday', id: 2 },
+    { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
+    { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
+
+    const user = userData.get({ plain: true });
+
+    res.render('user', {
+      ...user,
+      weekDays,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
