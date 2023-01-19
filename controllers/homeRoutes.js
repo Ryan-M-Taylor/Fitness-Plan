@@ -137,29 +137,7 @@ router.get("/profile", withAuth, async (req, res) => {
     { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
     { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
 
-    // console.log('workoutDays', workoutDays);
-    // for (let i = 0; i < weekDays.length; i++){
-    //   if (workoutDays.includes(weekDays[i])){
-    //     displayedWorkouts.push(workout)
-    //   }
-    // }
-
-
-    // const d = new Date();
-    // let day = d.getDay();
-    //     const someData =[ {
-    //       day: "Monday",
-    //       data: filter,
-    //       workoutL
-    //     },
-    //     {
-    //       day: "Tuesday",
-    //       data: "data"
-    //     }
-    //     ]
-
-    console.log(user);
-    res.render("profile", {
+    res.render('profile', {
       ...user,
       // workoutDays,
       weekDays,

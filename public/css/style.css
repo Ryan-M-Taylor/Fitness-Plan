@@ -110,17 +110,40 @@ body {
   background-color: rgb(121, 110, 110);
 }
 
-#update-button {
-  height: 372px;
+.chart-background{
+  background-color: black;
 }
 
+#update-button{
+  
+}
+
+@media screen and (max-width: 1250px) {
+  .card{
+    /* height: 290px; */
+    width: 135px;
+  }
+  textarea{
+    width: 133px;
+  }
+  h3.weekday{
+    font-size: 22px;
+  }
+}
 @media screen and (max-width: 992px) {
-  .card {
-    width: 10px;
-  }
-
   .container1 {
- 
-  }
+  flex-wrap: wrap;
+  width: 95vw;
+       /* width: 169px; */
+     /* position:fixed; */
+     /* height: fit-content; */
+    }
+    textarea{
+      width: 169px;
+    }
+    .card{
+      margin-top: 30px;
+      height: 290px;
+      width: 171px;
+    }
 }
-
