@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
 
   try {
-    const workoutData = await Workout.findByPk(req.params.id,);
+    const workoutData = await Workout.findByPk(req.params.id);
     console.log(workoutData);
     if (workoutData) {
       const editWorkout = await Workout.update(req.body, {
