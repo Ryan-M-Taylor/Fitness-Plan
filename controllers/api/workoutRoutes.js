@@ -35,15 +35,6 @@ router.put('/:id', withAuth, async (req, res) => {
       });
       res.status(200).json(newWorkout);
     }
-
-    // console.log(newWorkout);
-
-    // if (!newWorkout[0]) {
-    //   console.log('newWorkout[0]', newWorkout[0])
-    //   res.status(404).json({ message: 'No post with this id!' });
-    //   return;
-    // }
-    // res.status(200).json(newWorkout);
   } catch (err) {
     res.status(500).json(err);
   }
