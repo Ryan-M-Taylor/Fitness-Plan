@@ -57,7 +57,7 @@
     <script>
 
 window.addEventListener('beforeprint', () => {
-  myChart.resize(800, 800);
+  myChart.resize(500, 500);
 });
 window.addEventListener('afterprint', () => {
   myChart.resize();
@@ -65,10 +65,7 @@ window.addEventListener('afterprint', () => {
 
       const containers = document.querySelectorAll('.special-container');
       const timeArray = [];
-      //assigns value to each workout_time textarea
-      containers.forEach((container) => {
-const containers = document.querySelectorAll('.special-container');
-const timeArray = [];
+      
 //assigns value to each workout_time textarea
     containers.forEach((container) => {
         const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
@@ -78,7 +75,7 @@ const timeArray = [];
     })
 
       //const mon = document.querySelector('')
-      Chart.defaults.font.size = 24;
+      Chart.defaults.font.size = 17;
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
         type: 'bar',
