@@ -18,23 +18,34 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
 
   try {
-    const workoutData = await Workout.findByPk(req.params.id,);
-    console.log(workoutData);
-    if (workoutData) {
-      const editWorkout = await Workout.update(req.body, {
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
-      res.status(200).json(editWorkout);
-    } else {
+    console.log("req", req.params.id);
+    if (req.params.id == 0) {
       const newWorkout = await Workout.create({
         ...req.body,
         user_id: req.session.user_id,
       });
       res.status(200).json(newWorkout);
+    } else {
+      const workoutData = await Workout.findByPk(req.params.id);
+      console.log('*******', workoutData);
+      if (workoutData.user_id === req.session.user_id) {
+        const editWorkout = await Workout.update(req.body, {
+          where: {
+            id: req.params.id,
+            user_id: req.session.user_id,
+          },
+        });
+        res.status(200).json(editWorkout);
+      }
     }
+    // } else {
+    //   console.log('hitting else statement');
+    // const newWorkout = await Workout.create({
+    //   ...req.body,
+    //   user_id: req.session.user_id,
+    // });
+    // res.status(200).json(newWorkout);
+    // }
 
     // console.log(newWorkout);
 
