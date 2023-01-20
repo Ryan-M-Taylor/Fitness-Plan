@@ -24,7 +24,7 @@
         {{#each weekDays as |weekDay|}}
         <div class="card">
           <div class="input-group">
-            <h3 class="weekday">{{ weekDay.weekday }}</h3>
+            <h3 class="weekday">{{weekDay.weekday}}</h3>
             <span class="input-group-text">Workout:</span>
             <textarea type="text" id='workout-{{weekDay.id}}' aria-label="Workout" class="form-control"
               style="height: 25vh" readonly> </textarea>
