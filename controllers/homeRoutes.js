@@ -47,7 +47,7 @@ router.get("/", async (req, res) => {
       const workouts = users[i].workouts.map((workout) => workout.workout_time);
       // console.log(workouts)
       totalWorkoutTime = workouts.reduce(
-        (a, b) => parseInt(a) + parseInt(b),
+        (a, b) => parseInt(a) + (parseInt(b) || 0),
         0
       );
       console.log(totalWorkoutTime);

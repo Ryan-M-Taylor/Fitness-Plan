@@ -53,7 +53,19 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-      const mon = document.querySelector('')
+
+const containers = document.querySelectorAll('.special-container');
+const timeArray = [];
+//assigns value to each workout_time textarea
+    containers.forEach((container) => {
+        const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
+        const weekday = container.querySelector(`.weekday`).textContent;
+        timeArray.push({workout_time: workout_time, weekday: weekday});
+        console.log('****', timeArray);
+      
+    })
+
+      //const mon = document.querySelector('')
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
         type: 'bar',
@@ -61,7 +73,7 @@
           labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
           datasets: [{
             label: 'Total time for week: 120 | Minutes Spent Exercising This Day',
-            data: [45, 20, 35, 55, 25, 30, 50],
+            data: [timeArray[0].workout_time, timeArray[1].workout_time, timeArray[2].workout_time, timeArray[3].workout_time, timeArray[4].workout_time, timeArray[5].workout_time, timeArray[6].workout_time],
             borderWidth: 1,
             backgroundColor: [
               'rgba(255, 99, 132, 0.7)',
