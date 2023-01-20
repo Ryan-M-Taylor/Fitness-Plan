@@ -73,7 +73,10 @@ const timeArray = [];
         data: {
           labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
           datasets: [{
-            label: 'Total time for week: 120 | Minutes Spent Exercising This Day',
+            label: `Total time for week: ${timeArray.reduce(
+        (a, b) => parseInt(a) + (parseInt(b) || 0),
+        0
+      )} - Minutes Spent Exercising This Week`,
             data: timeArray,
             borderWidth: 1,
             backgroundColor: [
