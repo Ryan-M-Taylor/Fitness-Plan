@@ -46,48 +46,6 @@
     </div>
 
 
-<div>
-        <canvas id="myChart"></canvas>
-      </div>
-
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-
-      <script>
-        const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-            datasets: [{
-              label: 'Total time for week: 120 | Minutes Spent Exercising This Day',
-              data: [45, 20, 35, 55, 25, 30, 50],
-              borderWidth: 1,
-              backgroundColor: [
-          'rgba(255, 99, 132, 0.7)',
-          'rgba(255, 159, 64, 0.7)',
-          'rgba(255, 205, 86, 0.7)',
-          'rgba(75, 192, 192, 0.7)',
-          'rgba(54, 162, 235, 0.7)',
-          'rgba(153, 102, 255, 0.7)',
-          'rgba(201, 203, 207, 0.7)'
-        ],
-        color: 'rgba(255, 99, 132, 0.7)',
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-
-        console.log(data)
-      </script>
 
 
     {{!-- {{#else}} --}}

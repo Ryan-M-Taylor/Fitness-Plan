@@ -121,37 +121,6 @@ body{
   background-color: rgb(121, 110, 110);
 }
 
-#update-button{
-  height: 372px;
-}
 
 
 
-@media screen and (max-width: 992px) {
-
-
-  .card{
-    width: 10px;
-  }
-
-  .container1 {
-  
-flex-wrap: ;
-    
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-
-
-  .card{
-    width: 10px;
-  }
-
-  .container1 {
-  
-
-    
-  }
-}
