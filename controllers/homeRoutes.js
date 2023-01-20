@@ -128,14 +128,21 @@ router.get("/profile", withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    // filter workout data to check if there is data for particular day, then plug into object array
-    // const filter = function output
-    // const workoutDays = user.workouts.map((workout) => workout.weekday);
-    // const displayedWorkouts = [];
+    // console.log(user.workouts)
     const weekDays = [{ weekday: 'Monday', id: 1 }, { weekday: 'Tuesday', id: 2 },
     { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
     { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
 
+    const order = { Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6, Sunday: 7 };
+
+    user.workouts.sort(function (a, b) {
+      return order[a.weekday] - order[b.weekday];
+    });
+    // filter workout data to check if there is data for particular day, then plug into object array
+    // const filter = function output
+    // const workoutDays = user.workouts.map((workout) => workout.weekday);
+    // const displayedWorkouts = [];
+    
     res.render('profile', {
       ...user,
       // workoutDays,

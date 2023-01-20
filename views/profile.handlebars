@@ -51,7 +51,9 @@
     <div class='chart-background'>
       <canvas id="myChart"></canvas>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script>
 
 const containers = document.querySelectorAll('.special-container');
@@ -83,18 +85,18 @@ const timeArray = [];
               'rgba(54, 162, 235, 0.7)',
               'rgba(153, 102, 255, 0.7)',
               'rgba(201, 203, 207, 0.7)'
-            ],
+          ],
             color: 'rgba(255, 99, 132, 0.7)',
           }]
-        },
+      },
         options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
+        scales: {
+          y: {
+            beginAtZero: true
           }
         }
+      }
       });
     </script>
 
-<script src="./js/profile.js"></script>
+    <script src="./js/profile.js"></script>
