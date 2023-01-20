@@ -111,11 +111,21 @@ body {
 }
 
 .chart-background{
+  display: flex;
+  justify-content: center;
   background-color: black;
+  margin-top: 45px;
+  width: max-content;
+  border:solid white;
+  padding:10px ;
+
 }
 
+
+
 #update-button{
-  
+  margin-top: 20px;
+  display: flex;
 }
 
 @media screen and (max-width: 1250px) {
