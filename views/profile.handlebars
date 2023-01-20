@@ -48,7 +48,7 @@
       <button type="click" class="btn btn-primary" id="update-button">Update</button>
     </div>
 
-    <div class='chart-background'>
+    <div class='chart-background' style="position: relative; height:40vh; width:80vw">
       <canvas id="myChart"></canvas>
     </div>
 
@@ -56,8 +56,16 @@
     
     <script>
 
-const containers = document.querySelectorAll('.special-container');
-const timeArray = [];
+window.addEventListener('beforeprint', () => {
+  myChart.resize(500, 500);
+});
+window.addEventListener('afterprint', () => {
+  myChart.resize();
+});
+
+      const containers = document.querySelectorAll('.special-container');
+      const timeArray = [];
+      
 //assigns value to each workout_time textarea
     containers.forEach((container) => {
         const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
@@ -67,6 +75,7 @@ const timeArray = [];
     })
 
       //const mon = document.querySelector('')
+      Chart.defaults.font.size = 17;
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
         type: 'bar',

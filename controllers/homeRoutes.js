@@ -102,11 +102,17 @@ router.get('/users/:id', async (req, res) => {
       ],
     });
 
+    const user = userData.get({ plain: true });
+
     const weekDays = [{ weekday: 'Monday', id: 1 }, { weekday: 'Tuesday', id: 2 },
     { weekday: 'Wednesday', id: 3 }, { weekday: 'Thursday', id: 4 }, { weekday: 'Friday', id: 5 },
     { weekday: 'Saturday', id: 6 }, { weekday: 'Sunday', id: 7 }];
 
-    const user = userData.get({ plain: true });
+    const order = { Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6, Sunday: 7 };
+
+    user.workouts.sort(function (a, b) {
+      return order[a.weekday] - order[b.weekday];
+    });
 
     res.render('user', {
       ...user,

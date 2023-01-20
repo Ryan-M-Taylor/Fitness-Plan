@@ -14,6 +14,6 @@ Implement chart functionality in user profile page 1/2 done
 
 1/19/23
 
-Fix NaN bug
+Fix NaN bug - finished
 
-style pages
+style pages - 
