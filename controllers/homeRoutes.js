@@ -97,7 +97,7 @@ router.get('/users/:id', async (req, res) => {
       include: [
         {
           model: Workout,
-          attributes: ['workout', 'workout_time'],
+          attributes: ['workout', 'workout_time', 'weekday'],
         },
       ],
     });
