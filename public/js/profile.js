@@ -43,6 +43,7 @@ const updateWorkout = async () => {
     //     console.log(response)
     //     })
     document.location.replace(`/profile`);
+    //function to make days of the week display from monday to sunday
 }
 
 
