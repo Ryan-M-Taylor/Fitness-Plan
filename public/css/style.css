@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nosifer&family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Rubik+Wet+Paint&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Nosifer&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&family=Rubik+Wet+Paint&display=swap");
 
-
-
-*{
+* {
   color: white;
 }
 
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -37,29 +36,25 @@ textarea {
   margin-left: -5px;
 }
 
-.main-container{
-  display:flex;
-  border:solid 2px black;
+.main-container {
+  display: flex;
+  border: solid 2px black;
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.6);
   transition: ease-in 400ms;
-  
 }
 
-.main-container:hover{
+.main-container:hover {
   background-color: black;
   opacity: 0.9;
   box-shadow: 5px 2px 5px white;
-
 }
 
-body{
-  
-  background-image: url('./images/arnold.jpg');
+body {
+  background-image: url("./images/arnold.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 16px;
-
 }
 
 /* .bg-image{
@@ -73,13 +68,12 @@ body{
 
 } */
 
-.hide{
-  display:none;
-  background-color: rgba(0, 0, 0, 0.6)
-  
+.hide {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.signup-btn{
+.signup-btn {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -88,9 +82,7 @@ body{
   text-decoration: underline;
 }
 
-
-
-.signin-form{
+.signin-form {
   border: solid rgb(0, 0, 0);
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -100,21 +92,18 @@ body{
 .shown {
   border: solid 2px white;
   padding: 40px;
-  background-color: rgba(0, 0, 0, 0.8)
-
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.total-workout-time{
-  font-family: 'Nosifer', cursive;
-
+.total-workout-time {
+  font-family: "Nosifer", cursive;
 }
 
-.user-name{
-  
+.user-name {
 }
 
-.container1{
-  display:flex;
+.container1 {
+  display: flex;
 }
 
 .card {
