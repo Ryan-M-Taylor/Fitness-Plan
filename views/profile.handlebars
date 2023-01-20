@@ -55,14 +55,17 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script>
-      const containers = document.querySelectorAll('.special-container');
-      const timeArray = [];
-      //assigns value to each workout_time textarea
-      containers.forEach((container) => {
+
+const containers = document.querySelectorAll('.special-container');
+const timeArray = [];
+//assigns value to each workout_time textarea
+    containers.forEach((container) => {
         const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
         timeArray.push(workout_time);
         console.log('****', timeArray);
-      })
+      
+    })
+
       //const mon = document.querySelector('')
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
