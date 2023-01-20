@@ -11,11 +11,22 @@ const updateWorkout = async () => {
         const id = hiddenInputValue ? hiddenInputValue : 0;
         // api/workout/7
         // api/workout/
-        await fetch(`/api/workout/${id}`, {
+        const res = await fetch(`/api/workout/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ workout, workout_time, weekday }),
             headers: { 'Content-Type': 'application/json', },
         });
+
+        if (res.ok) {
+            container.querySelector(`#workout-desc`).value = workout;
+            container.querySelector(`#workout-time`).value = workout_time;
+        }
+
+        const data = await res.json();
+
+        console.log(res, data,workout_time, workout);
+
+        document.location.replace(`/profile`);
     })
     // const workoutIds = event.target.attributes.data.workout_ids;
     // workoutIds.forEach(async(workoutId) => {
