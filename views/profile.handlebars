@@ -4,11 +4,8 @@
   </div>
 </div>
 
-{{! <div class="row mt-4">
-  <div class="-md-6"> }}
     <h3>Create a New workout:</h3>
     {{#if workouts.length}}
-    {{!-- {{#if workoutDay}} --}}
     <div class="container1">
       {{#each workouts as |workout|}}
       <div class="card special-container">
@@ -19,7 +16,7 @@
           <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
             style="height: 25vh"> {{workout.workout}}</textarea>
           <span class="input-group-text" style="width: 8rem;">
-            Total Time Spent:</span>
+            Total Time Spent (min):</span>
           <textarea type="text" id='workout-time' aria-label="Time"
             class="form-control"> {{workout.workout_time}}</textarea>
         </div>
@@ -36,7 +33,7 @@
             <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
               style="height: 25vh"> </textarea>
             <span class="input-group-text" style="width: 8rem;">
-              Total Time Spent:</span>
+              Total Time Spent (min):</span>
             <textarea type="text" id='workout-time' aria-label="Time" class="form-control"> </textarea>
           </div>
         </div>
@@ -53,61 +50,5 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <script>
-
-window.addEventListener('beforeprint', () => {
-  myChart.resize(500, 500);
-});
-window.addEventListener('afterprint', () => {
-  myChart.resize();
-});
-
-      const containers = document.querySelectorAll('.special-container');
-      const timeArray = [];
-      
-//assigns value to each workout_time textarea
-    containers.forEach((container) => {
-        const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
-        timeArray.push(workout_time);
-        console.log('****', timeArray);
-      
-    })
-
-      //const mon = document.querySelector('')
-      Chart.defaults.font.size = 17;
-      const ctx = document.getElementById('myChart');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          datasets: [{
-            label: `Total time for week: ${timeArray.reduce(
-        (a, b) => parseInt(a) + (parseInt(b) || 0),
-        0
-      )} - Minutes Spent Exercising This Week`,
-            data: timeArray,
-            borderWidth: 1,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.7)',
-              'rgba(255, 159, 64, 0.7)',
-              'rgba(255, 205, 86, 0.7)',
-              'rgba(75, 192, 192, 0.7)',
-              'rgba(54, 162, 235, 0.7)',
-              'rgba(153, 102, 255, 0.7)',
-              'rgba(201, 203, 207, 0.7)'
-          ],
-            color: 'rgba(255, 99, 132, 0.7)',
-          }]
-      },
-        options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-      });
-    </script>
-
+    <script src="./js/graph.js"></script>
     <script src="./js/profile.js"></script>

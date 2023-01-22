@@ -11,10 +11,6 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
     workout: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -37,27 +33,6 @@ Workout.init(
     weekday: {
       type: DataTypes.STRING
     }
-    // monday: {
-    //   type: DataTypes.STRING,
-    // },
-    // tuesday: {
-    //   type: DataTypes.STRING,
-    // },
-    // wednesday: {
-    //   type: DataTypes.STRING,
-    // },
-    // thursday: {
-    //   type: DataTypes.STRING,
-    // },
-    // friday: {
-    //   type: DataTypes.STRING,
-    // },
-    // saturday: {
-    //   type: DataTypes.STRING,
-    // },
-    // sunday: {
-    //   type: DataTypes.STRING,
-    // },
   },
   {
     sequelize,

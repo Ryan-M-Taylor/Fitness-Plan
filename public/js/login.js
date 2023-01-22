@@ -44,7 +44,6 @@ const signupFormHandler = async (event) => {
   }
 };
 
-
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
@@ -53,12 +52,11 @@ document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
+const signupBtn = document.querySelector('.signup-instead')
+const signupEl = document.querySelector('.hide')
+const loginEl = document.querySelector('.shown')
 
-  const signupBtn = document.querySelector('.signup-instead')
-  const signupEl = document.querySelector('.hide')
-  const loginEl = document.querySelector('.shown')
-
-  signupBtn.addEventListener('click', function(){
-signupEl.style.display = 'block';
-loginEl.style.display = 'none';
-  })
+signupBtn.addEventListener('click', function () {
+  signupEl.style.display = 'block';
+  loginEl.style.display = 'none';
+})
