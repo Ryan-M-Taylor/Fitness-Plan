@@ -23,7 +23,7 @@ new Chart(ctx, {
     data: {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
-            label: `Total time for week: ${totalTimeRounded} - Hours Spent Exercising This Week`,
+            label: `Minutes spent exercising this day `,
             data: timeArray,
             borderWidth: 1,
             backgroundColor: [
