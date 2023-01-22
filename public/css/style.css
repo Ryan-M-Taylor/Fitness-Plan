@@ -9,6 +9,7 @@
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  position: sticky;
 }
 
 textarea {
@@ -115,10 +116,9 @@ body {
   justify-content: center;
   background-color: black;
   margin-top: 45px;
-  width: max-content;
+  /* width: 100%; */
   border:solid white;
-  padding:10px ;
-
+  padding:10px;
 }
 
 
@@ -152,8 +152,10 @@ body {
       width: 169px;
     }
     .card{
-      margin-top: 30px;
-      height: 290px;
       width: 171px;
+    }
+
+    .input-group-text{
+      background-color: rgb(121, 110, 110);  
     }
 }
