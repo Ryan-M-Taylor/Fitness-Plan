@@ -26,6 +26,8 @@ Command to Install Dependencies: npm i
 ## <section id = "Usage">Usage</section>
 Using the Repo: When first connecting to the application, the user will be presented with the homepage where they can view all registered users' weekly workout's or login/create a user profile. Clicking on the login link will take users' to the login/sign up page and once signed in, they'll be able to create or modify their workouts throughout the week.
 
+Deployed Heroku Application: https://protected-woodland-15218.herokuapp.com/
+
 ## <section id = "Contributing">Contributing</section>
 Contributing to the Repo: Currently not taking contributions.
 
