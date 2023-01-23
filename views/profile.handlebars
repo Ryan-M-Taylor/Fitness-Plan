@@ -3,8 +3,10 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-
     <h3>Create a New workout:</h3>
+
+      <p class = "p-container">Total time:</p>
+      
     {{#if workouts.length}}
     <div class="container1">
       {{#each workouts as |workout|}}
@@ -44,6 +46,9 @@
     <div class="btn-container">
       <button type="click" class="btn btn-primary" id="update-button">Update</button>
     </div>
+
+
+
 
     <div class='chart-background' style="position: relative; height:40vh; width:100%">
       <canvas id="myChart"></canvas>

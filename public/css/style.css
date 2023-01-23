@@ -6,6 +6,8 @@
   color: white;
 }
 
+
+
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -128,6 +130,14 @@ body {
   display: flex;
 }
 
+
+.p-container{
+  text-align: center;
+  width: 100%;
+  font-weight: 800;
+  letter-spacing: 1px; 
+}
+
 @media screen and (max-width: 1250px) {
   .card{
     /* height: 290px; */
@@ -158,4 +168,5 @@ body {
     .input-group-text{
       background-color: rgb(121, 110, 110);  
     }
+
 }

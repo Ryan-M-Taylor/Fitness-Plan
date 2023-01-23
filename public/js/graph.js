@@ -14,7 +14,7 @@ containers.forEach((container) => {
     console.log('****', timeArray);
 })
 
-Chart.defaults.font.size = 17;
+Chart.defaults.font.size = 12;
 const ctx = document.getElementById('myChart');
 const totalTime = timeArray.reduce((a, b) => parseInt(a) + (parseInt(b) || 0), 0) / 60;
 const totalTimeRounded = Math.round(totalTime * 100) / 100
@@ -23,7 +23,7 @@ new Chart(ctx, {
     data: {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
-            label: `Minutes spent exercising this day `,
+            label: `Daily Workout Time (min)`,
             data: timeArray,
             borderWidth: 1,
             backgroundColor: [
