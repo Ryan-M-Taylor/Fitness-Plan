@@ -4,11 +4,10 @@
 N/A
 
 ## <section id = "Description">Description</section>
-This is a lightweight application to store user workout data while giving them the ability to share and compare workouts with others. Whether the motivation is to compete with friends, get new workout ideas, or track their progress.
+This is a lightweight application to store user workout data while giving them the ability to share and compare workouts with others. Whether the motivation is to compete with friends, get new workout ideas, or track progress, all can be done with our Fitness Planner. This application was built using handlebars.js, express sessions, and sequelize. 
 
-![Node Questions](./image/nodequestions.png)
+![Node Questions](./image/.png)
 
-Link to video demonstration: https://drive.google.com/file/d/1nTql6j8v9ov0MurceNV8lzc9ybklxvvY/view
 
 ## Table of Contents
 1.) <a href = "#License">License</a><br>
@@ -22,11 +21,11 @@ Link to video demonstration: https://drive.google.com/file/d/1nTql6j8v9ov0MurceN
 Command to Install Dependencies: npm i
 
 ## <section id = "Usage">Usage</section>
-Using the Repo: 
+Using the Repo: When first connecting to the application, the user will be presented with the homepage where they can view all registered users' weekly workout's or login/create a user profile. Clicking on the login link will take users' to the login/sign up page and once signed in, they'll be able to create or modify their workouts throughout the week.
 
 ## <section id = "Contributing">Contributing</section>
 Contributing to the Repo: Currently not taking contributions.
 
 
 ## <section id = "Questions">Questions</section>
-If you have any questions, please feel free to contact me: <br><br>
+If you have any questions, please feel free to contact me: Ryan-M-Taylor <br><br>
