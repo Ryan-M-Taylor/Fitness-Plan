@@ -1,4 +1,4 @@
-# README Generator
+# Fitness Plan
 
 ## <section id = "License">License</section>
 N/A
@@ -6,8 +6,11 @@ N/A
 ## <section id = "Description">Description</section>
 This is a lightweight application to store user workout data while giving them the ability to share and compare workouts with others. Whether the motivation is to compete with friends, get new workout ideas, or track progress, all can be done with our Fitness Planner. This application was built using handlebars.js, express sessions, and sequelize. 
 
-![Node Questions](./image/.png)
+![Homepage](./public/css/images/localhost_3001_.png)
 
+![Login](./public/css/images/localhost_3001_login.png)
+
+![Profile](./public/css/images/localhost_3001_profile.png)
 
 ## Table of Contents
 1.) <a href = "#License">License</a><br>
