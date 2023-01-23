@@ -5,26 +5,26 @@ window.addEventListener('afterprint', () => {
     myChart.resize();
 });
 
-const containers = document.querySelectorAll('.special-container');
-const timeArray = [];
+const containers2 = document.querySelectorAll('.special-container');
+const timeArray2 = [];
 
-containers.forEach((container) => {
-    const workout_time = parseInt(container.querySelector(`#workout-time`).value.trim());
-    timeArray.push(workout_time);
-    console.log('****', timeArray);
+containers2.forEach((container) => {
+    const workout_time2 = parseInt(container.querySelector(`#workout-time`).value.trim());
+    timeArray2.push(workout_time2);
+    console.log('****', timeArray2);
 })
 
 Chart.defaults.font.size = 12;
 const ctx = document.getElementById('myChart');
-const totalTime = timeArray.reduce((a, b) => parseInt(a) + (parseInt(b) || 0), 0) / 60;
-const totalTimeRounded = Math.round(totalTime * 100) / 100
+// const totalTime = timeArray.reduce((a, b) => parseInt(a) + (parseInt(b) || 0), 0) / 60;
+// const totalTimeRounded = Math.round(totalTime * 100) / 100
 new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
             label: `Daily Workout Time (min)`,
-            data: timeArray,
+            data: timeArray2,
             borderWidth: 1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.7)',
