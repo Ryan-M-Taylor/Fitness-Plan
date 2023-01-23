@@ -6,37 +6,37 @@
 
 
 {{#if workouts.length}}
-    <div class="container1">
-      {{#each workouts as |workout|}}
-      <div class="card">
-        <div class="input-group">
-          <input type="hidden" value={{workout.id}} id='id'>
-          <h3 class="weekday">{{workout.weekday}}</h3>
-          <span class="input-group-text"> Workout:</span>
-          <textarea type="text" id='workout-{{workout.id}}' aria-label="Workout" class="form-control"
-            style="height: 25vh" readonly> {{workout.workout}}</textarea>
-          <span class="input-group-text" style="width: 8rem;">
-            Total Time Spent:</span>
-          <textarea type="text" id='time-{{workout.id}}' aria-label="Time"
-            class="form-control" readonly> {{workout.workout_time}}</textarea>
-        </div>
-      </div>
-      {{/each}}
-      {{else}}
-      <div class="container1">
-        {{#each weekDays as |weekDay|}}
-        <div class="card">
-          <div class="input-group">
-            <h3 class="weekday">{{weekDay.weekday}}</h3>
-            <span class="input-group-text">Workout:</span>
-            <textarea type="text" id='workout-{{weekDay.id}}' aria-label="Workout" class="form-control"
-              style="height: 25vh" readonly> </textarea>
-            <span class="input-group-text" style="width: 8rem;">
-              Total Time Spent:</span>
-            <textarea type="text" id='time-{{weekDay.id}}' aria-label="Time" class="form-control" readonly> </textarea>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-      {{/if}}
+<div class="container1">
+  {{#each workouts as |workout|}}
+  <div class="card">
+    <div class="input-group">
+      <input type="hidden" value={{workout.id}} id='id'>
+      <h3 class="weekday">{{workout.weekday}}</h3>
+      <span class="input-group-text"> Workout:</span>
+      <textarea type="text" id='workout-{{workout.id}}' aria-label="Workout" class="form-control" style="height: 25vh"
+        readonly> {{workout.workout}}</textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent:</span>
+      <textarea type="text" id='time-{{workout.id}}' aria-label="Time" class="form-control"
+        readonly> {{workout.workout_time}}</textarea>
     </div>
+  </div>
+  {{/each}}
+  {{else}}
+  <div class="container1">
+    {{#each weekDays as |weekDay|}}
+    <div class="card">
+      <div class="input-group">
+        <h3 class="weekday">{{weekDay.weekday}}</h3>
+        <span class="input-group-text">Workout:</span>
+        <textarea type="text" id='workout-{{weekDay.id}}' aria-label="Workout" class="form-control" style="height: 25vh"
+          readonly> </textarea>
+        <span class="input-group-text" style="width: 8rem;">
+          Total Time Spent:</span>
+        <textarea type="text" id='time-{{weekDay.id}}' aria-label="Time" class="form-control" readonly> </textarea>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

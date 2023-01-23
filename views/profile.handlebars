@@ -3,57 +3,58 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-    <h3>Create a New workout:</h3>
+<h3>Create a New workout:</h3>
 
-      <p class = "p-container">Total time:</p>
-      
-    {{#if workouts.length}}
-    <div class="container1">
-      {{#each workouts as |workout|}}
-      <div class="card special-container">
-        <div class="input-group">
-          <input type="hidden" value={{workout.id}} id='id'>
-          <h3 class="weekday" value={{workout.weekday}}>{{workout.weekday}}</h3>
-          <span class="input-group-text"> Workout:</span>
-          <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
-            style="height: 25vh"> {{workout.workout}}</textarea>
-          <span class="input-group-text" style="width: 8rem;">
-            Total Time Spent (min):</span>
-          <textarea type="text" id='workout-time' aria-label="Time"
-            class="form-control"> {{workout.workout_time}}</textarea>
-        </div>
-      </div>
-      {{/each}}
-      {{else}}
-      <div class="container1">
-        {{#each weekDays as |weekDay|}}
-        <div class="card special-container">
-          <div class="input-group">
-            <h3 class="weekday">{{ weekDay.weekday }}</h3>
-            <span class="input-group-text">Workout:</span>
-            <input type="hidden" value="">
-            <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
-              style="height: 25vh"> </textarea>
-            <span class="input-group-text" style="width: 8rem;">
-              Total Time Spent (min):</span>
-            <textarea type="text" id='workout-time' aria-label="Time" class="form-control"> </textarea>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-      {{/if}}
+<p class="p-container">Total time:</p>
+
+{{#if workouts.length}}
+<div class="container1">
+  {{#each workouts as |workout|}}
+  <div class="card special-container">
+    <div class="input-group">
+      <input type="hidden" value={{workout.id}} id='id'>
+      <h3 class="weekday" value={{workout.weekday}}>{{workout.weekday}}</h3>
+      <span class="input-group-text"> Workout:</span>
+      <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
+        style="height: 25vh"> {{workout.workout}}</textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent (min):</span>
+      <textarea type="text" id='workout-time' aria-label="Time"
+        class="form-control"> {{workout.workout_time}}</textarea>
     </div>
-    <div class="btn-container">
-      <button type="click" class="btn btn-primary" id="update-button">Update</button>
+  </div>
+  {{/each}}
+</div>
+{{else}}
+<div class="container1">
+  {{#each weekDays as |weekDay|}}
+  <div class="card special-container">
+    <div class="input-group">
+      <h3 class="weekday">{{ weekDay.weekday }}</h3>
+      <span class="input-group-text">Workout:</span>
+      <input type="hidden" value="">
+      <textarea type="text" id='workout-desc' aria-label="Workout" class="form-control"
+        style="height: 25vh"> </textarea>
+      <span class="input-group-text" style="width: 8rem;">
+        Total Time Spent (min):</span>
+      <textarea type="text" id='workout-time' aria-label="Time" class="form-control"> </textarea>
     </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+<button type="click" class="btn btn-primary" id="update-button">Update</button>
+</div>
 
 
 
 
-    <div class='chart-background' style="position: relative; height:40vh; width:100%">
-      <canvas id="myChart"></canvas>
-    </div>
+{{#if workouts.length}}
+<div class='container chart-background' style="position: relative; height:40vh; width:100%">
+  <canvas id="myChart"></canvas>
+</div>
+{{/if}}
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./js/graph.js"></script>
-    <script src="./js/profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/graph.js"></script>
+<script src="./js/profile.js"></script>

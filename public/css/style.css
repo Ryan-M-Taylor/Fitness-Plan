@@ -6,8 +6,6 @@
   color: white;
 }
 
-
-
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -113,60 +111,56 @@ body {
   background-color: rgb(121, 110, 110);
 }
 
-.chart-background{
+.chart-background {
   display: flex;
   justify-content: center;
   background-color: black;
   margin-top: 45px;
-  /* width: 100%; */
-  border:solid white;
-  padding:10px;
+  width: 50%;
+  border: solid white;
+  padding: 10px;
 }
 
-
-
-#update-button{
+#update-button {
   margin-top: 20px;
   display: flex;
 }
 
-
-.p-container{
+.p-container {
   text-align: center;
   width: 100%;
   font-weight: 800;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 1250px) {
-  .card{
+  .card {
     /* height: 290px; */
     width: 135px;
   }
-  textarea{
+  textarea {
     width: 133px;
   }
-  h3.weekday{
+  h3.weekday {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 992px) {
   .container1 {
-  flex-wrap: wrap;
-  width: 95vw;
-       /* width: 169px; */
-     /* position:fixed; */
-     /* height: fit-content; */
-    }
-    textarea{
-      width: 169px;
-    }
-    .card{
-      width: 171px;
-    }
+    flex-wrap: wrap;
+    width: 95vw;
+    /* width: 169px; */
+    /* position:fixed; */
+    /* height: fit-content; */
+  }
+  textarea {
+    width: 169px;
+  }
+  .card {
+    width: 171px;
+  }
 
-    .input-group-text{
-      background-color: rgb(121, 110, 110);  
-    }
-
+  .input-group-text {
+    background-color: rgb(121, 110, 110);
+  }
 }

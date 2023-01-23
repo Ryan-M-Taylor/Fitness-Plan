@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Workout extends Model {}
 
@@ -21,30 +21,29 @@ Workout.init(
       defaultValue: DataTypes.NOW,
     },
     workout_time: {
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     weekday: {
-      type: DataTypes.STRING
-    }
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'workout',
+    modelName: "workout",
   }
 );
 
 module.exports = Workout;
-
 
 /**
  * {
@@ -70,7 +69,7 @@ module.exports = Workout;
  *     user_id: 99,
  *      weekday: Monday,
  *      duration: 599s
- *      description: 
+ *      description:
  *   },
  *   {
  *     weekday:: Sunday,
@@ -83,5 +82,3 @@ module.exports = Workout;
 // const weekdays = ['Monday', 'Tuesday', 'Wednesday']
 
 // weekdays.forEach(() => {
-
-
