@@ -1,10 +1,10 @@
-const User = require('./User');
+const User = require("./User");
 // const Weekday = require('./Weekday');
-const Workout = require('./Workout');
+const Workout = require("./Workout");
 
 User.hasMany(Workout, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 // Weekday.hasOne('Workout', {
@@ -13,13 +13,11 @@ User.hasMany(Workout, {
 // })
 
 Workout.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 // Workout.belongsTo(Weekday, {
 //   foreignKey: 'weekday_id'
 // });
-
-
 
 module.exports = { User, Workout };
